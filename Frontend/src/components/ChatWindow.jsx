@@ -31,26 +31,25 @@ const ChatWindow = ({ isOpen, toggleChat }) => {
 
     try {
       // Make API call to backend
-      const response = await fetch(
-        "https://fotographiya-api.onrender.com/api/chat/message",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            message: inputText,
-            timestamp: new Date().toISOString(),
-            sessionId: "user-session-123",
-          }),
+      console.log("Sending message to backend:", inputText);
+      const response = await fetch("https://fotograchat/message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({
+          message: inputText,
+          timestamp: new Date().toISOString(),
+          sessionId: "user-session-123",
+        }),
+      });
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
       const data = await response.json();
+      console.log("Received response from backend:", data);
 
       // Add bot response
       const botMessage = {
