@@ -32,7 +32,7 @@ const ChatWindow = ({ isOpen, toggleChat }) => {
     try {
       // Make API call to backend
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/chat/message`,
+        "https://fotographiya-api.onrender.com/api/chat/message",
         {
           method: "POST",
           headers: {
