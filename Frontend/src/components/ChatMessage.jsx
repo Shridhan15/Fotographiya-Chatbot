@@ -3,7 +3,7 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import "../styles/ChatBot.css";
-
+import logoImg from "../assets/logo/logo.jpeg";
 // ============================================
 // ✅ MASTER KEYWORD TO LINK MAPPING
 // ============================================
@@ -485,11 +485,7 @@ const ChatMessage = ({ message, lastUserMessage }) => {
     return (
       <div className="message-wrapper bot">
         <div className="message-avatar">
-          <img
-            src="/src/assets/logo/logo.jpeg"
-            alt="Bot"
-            className="avatar-img"
-          />
+          <img src={logoImg} alt="Bot" className="avatar-img" />
         </div>
         <div className="message-content">
           <div className="message-bubble bot-bubble">
@@ -542,11 +538,7 @@ const ChatMessage = ({ message, lastUserMessage }) => {
   return (
     <div className="message-wrapper bot">
       <div className="message-avatar">
-        <img
-          src="/src/assets/logo/logo.jpeg"
-          alt="Bot"
-          className="avatar-img"
-        />
+        <img src={logoImg} alt="Bot" className="avatar-img" />
       </div>
       <div className="message-content">
         <div className="message-bubble bot-bubble">

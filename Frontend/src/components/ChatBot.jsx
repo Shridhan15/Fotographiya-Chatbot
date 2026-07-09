@@ -4,7 +4,8 @@ import "../styles/ChatBot.css";
 import ChatMessage from "./ChatMessage";
 import ChatInput from "./ChatInput";
 import TypingIndicator from "./TypingIndicator";
-
+import logoImg from "../assets/logo/logo.jpeg";
+// (Make sure this relative path is correct based on where your component is!)
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -142,22 +143,14 @@ const ChatBot = () => {
     <>
       {!isOpen && (
         <button className="chat-toggle-btn" onClick={toggleChat}>
-          <img
-            src="/src/assets/logo/logo.jpeg"
-            alt="Chat"
-            className="chat-toggle-icon"
-          />
+          <img src={logoImg} alt="Chat" className="chat-toggle-icon" />
         </button>
       )}
 
       <div className={`chat-window ${isOpen ? "open" : "closed"}`}>
         <div className="chat-header">
           <div className="chat-header-info">
-            <img
-              src="/src/assets/logo/logo.jpeg"
-              alt="Fotographiya"
-              className="chat-logo"
-            />
+            <img src={logoImg} alt="Fotographiya" className="chat-logo" />
             <div className="header-text">
               <div className="brand-row">
                 <span className="brand-name">Fotographiya</span>
