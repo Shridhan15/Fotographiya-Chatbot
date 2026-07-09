@@ -24,8 +24,13 @@ const PORT = process.env.PORT || 5000;
 
 // ===== MIDDLEWARE =====
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
-  credentials: true
+  origin: [
+    'http://localhost:5173', // Allows your local computer to still work
+    'https://fotographiya-chatbot.vercel.app' // Allows Vercel to work! (NO trailing slash at the end)
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(helmet());
 app.use(express.json());
